@@ -3,7 +3,7 @@ from flask_cors import CORS
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# from google import genai
+from google import genai
 import os
 from dotenv import load_dotenv
 
@@ -32,7 +32,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 api_key = os.getenv("GEMINI_API_KEY")
-# client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=api_key)
 
 
 # ---------------------------
@@ -276,27 +276,13 @@ def chat():
         "You are a campus study-spot assistant. "
         "Use the device list to infer quiet/comfortable areas. "
         "Lower sound is quieter, lower TVOC/eCO2 is fresher air. "
-        "Give 2-4 suggestions with short reasoning.\n\n"
+        "Answer the user's query based on the device data.\n\n"
         f"Devices: {devices}\n\n"
         f"User: {user_input}"
     )
 
     resp = client.models.generate_content(model="gemini-1.5-flash", contents=prompt)
     return jsonify({"response": resp.text}), 200
-
-
-# ---------------------------
-# AI
-# ---------------------------
-# from google import genai
-
-# # The client gets the API key from the environment variable `GEMINI_API_KEY`.
-# client = genai.Client()
-
-# response = client.models.generate_content(
-#     model="gemini-3-flash-preview", contents="Explain how AI works in a few words"
-# )
-# print(response.text)
 
 
 # ---------------------------

@@ -1,7 +1,7 @@
 export default interface Device {
     id: string; // Firestore doc id
-
-    feedback: string;
+    ai_rating: number;
+    ai_feedback: string;
     ip: string;
 
     loc: {
@@ -10,6 +10,6 @@ export default interface Device {
     };
 
     rating: number;
-
+    feedback: string[];
     sensorData: number[];
 }

@@ -78,6 +78,7 @@ const DataView: React.FC<{ goHome: () => void }> = ({ goHome }) => {
 
         document.addEventListener("mousedown", onMouseDown);
         return () => document.removeEventListener("mousedown", onMouseDown);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editingId, draftLat, draftLng]);
 
     const startEditing = (device: Device) => {
