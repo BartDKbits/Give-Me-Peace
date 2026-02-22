@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    overflow-x: hidden;
+}
+
+.floatingNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.navVisible {
+    transform: translateY(0);
+}
+
+.navHidden {
+    transform: translateY(-100%);
+}
+
+.viewport {
+    overflow: hidden;
+    width: 100vw;
+}
+
+.slider {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.page {
+    width: 100vw;
+    flex-shrink: 0;
+}
+
+.showData {
+    transform: translateX(-100vw);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navBtn {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.heroCenter {
+    text-align: center;
+    margin: auto;
+}
+
+.bigLogo {
+    font-size: 85px;
+    font-weight: bold;
+}
+
+.heroTitle {
+    font-size: 48px;
+    margin-top: 20px;
+    color: #6f6f6f;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.heroTitleVisible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.goBtn {
+    margin-top: 30px;
+    padding: 12px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+.goBtn:hover {
+    opacity: 0.8;
+}
+
+.arrow {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 50px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+.about {
+    height: 100vh;
+    padding: 100px;
+    background: #f5f5f5;
+    opacity: 0;
+    transform: translateY(100px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.aboutVisible {
+    opacity: 1;
+    transform: translateY(0);
+}

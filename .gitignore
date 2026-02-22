@@ -1,1 +1,11 @@
 node_modules
+.DS_Store
+dist
+coverage
+.env
+*.log
+.idea
+.vscode
+*.suo
+env.ts
+give-me-peace-firebase-adminsdk.json
